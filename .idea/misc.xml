@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/ari43/AndroidStudioProjects/NFTSocialMedia/app/src/main/res/drawable/profile_bottom_section.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/ari43/AndroidStudioProjects/NFTSocialMedia/app/src/main/res/drawable/profile_mid_section.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/ari43/AndroidStudioProjects/NFTSocialMedia/app/src/main/res/drawable/social_bottom.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/ari43/AndroidStudioProjects/NFTSocialMedia/app/src/main/res/drawable/translucent_bg.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/ari43/AndroidStudioProjects/NFTSocialMedia/app/src/main/res/layout/activity_login.xml" value="0.34646739130434784" />
+        <entry key="..\:/Users/ari43/AndroidStudioProjects/NFTSocialMedia/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/ari43/AndroidStudioProjects/NFTSocialMedia/app/src/main/res/layout/activity_profile.xml" value="0.34148550724637683" />
+        <entry key="..\:/Users/ari43/AndroidStudioProjects/NFTSocialMedia/app/src/main/res/layout/activity_set_username.xml" value="0.34646739130434784" />
+        <entry key="..\:/Users/ari43/AndroidStudioProjects/NFTSocialMedia/app/src/main/res/layout/activity_social.xml" value="0.33061594202898553" />
+        <entry key="..\:/Users/ari43/AndroidStudioProjects/NFTSocialMedia/app/src/main/res/layout/activity_splash_screen.xml" value="0.2694746376811594" />
+        <entry key="..\:/Users/ari43/AndroidStudioProjects/NFTSocialMedia/app/src/main/res/layout/item_profile.xml" value="0.33" />
+        <entry key="..\:/Users/ari43/AndroidStudioProjects/NFTSocialMedia/app/src/main/res/layout/item_social.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
