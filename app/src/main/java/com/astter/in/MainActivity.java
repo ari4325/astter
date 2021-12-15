@@ -47,16 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
     Credentials generateAddress(String seed_phrase){
         int[] derivationPath = {44 | Bip32ECKeyPair.HARDENED_BIT, 60 | Bip32ECKeyPair.HARDENED_BIT, Bip32ECKeyPair.HARDENED_BIT, 0,0};
-
-// Generate a BIP32 master keypair from the mnemonic phrase
-
         Bip32ECKeyPair masterKeypair = Bip32ECKeyPair.generateKeyPair(MnemonicUtils.generateSeed(seed_phrase, null));
-
-// Derived the key using the derivation path
         Bip32ECKeyPair derivedKeyPair = Bip32ECKeyPair.deriveKeyPair(masterKeypair, derivationPath);
-
-// Load the wallet for the derived key
-
         return Credentials.create(derivedKeyPair);
     }
 }

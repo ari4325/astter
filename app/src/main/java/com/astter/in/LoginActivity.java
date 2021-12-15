@@ -77,10 +77,10 @@ public class LoginActivity extends AppCompatActivity {
 
                                 for(int i = 0; i<jsonArray.length(); i++){
                                     JSONObject nft = jsonArray.getJSONObject(i);
-                                    SocialItem item = new SocialItem(nft.getString("name"), nft.getString("owner"), nft.getString("img_url"));
+                                    SocialItem item = new SocialItem(nft.getString("owner_address"), nft.getString("name"), nft.getString("owner"), nft.getString("img_url"));
                                     items.add(item);
                                 }
-                                Account.createUser(userObject.getString("username"), userObject.getString("address"), "");
+                                Account.createUser(userObject.getString("username"), userObject.getString("address"), "", userObject.getString("_id"));
                                 Intent intent = new Intent(LoginActivity.this, SocialActivity.class);
                                 startActivity(intent);
                                 overridePendingTransition(0, 0);

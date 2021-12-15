@@ -1,6 +1,7 @@
 package com.astter.in;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,8 @@ import com.android.volley.toolbox.StringRequest;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
+import jnr.ffi.annotations.In;
 
 public class SocialAdapter extends RecyclerView.Adapter<SocialAdapter.Holder>{
     Context mContext;
@@ -43,19 +46,10 @@ public class SocialAdapter extends RecyclerView.Adapter<SocialAdapter.Holder>{
             @Override
             public void onClick(View v) {
                 //Toast.makeText(mContext, "HELLO", Toast.LENGTH_SHORT).show();
-                StringRequest request = new StringRequest(Request.Method.PUT, Constants.startFollowing(i.getName()), new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Toast.makeText(mContext, "User followed successfully", Toast.LENGTH_SHORT).show();
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        error.printStackTrace();
-                    }
-                });
-
-                RequestHandler.getInstance(mContext).addToRequestQueue(request);
+                Intent intent = new Intent(mContext, ProfileActivity.class);
+                intent.putExtra("address", i.getOwner_address());
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                mContext.startActivity(intent);
             }
         });
     }

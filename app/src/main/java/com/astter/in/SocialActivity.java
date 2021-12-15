@@ -45,7 +45,7 @@ public class SocialActivity extends AppCompatActivity {
                     JSONArray nfts = responseObject.getJSONArray("nfts");
                     for(int i = 0; i<nfts.length(); i++){
                         JSONObject nft = nfts.getJSONObject(i);
-                        SocialItem item = new SocialItem(nft.getString("name"), nft.getString("owner"), nft.getString("img_url"));
+                        SocialItem item = new SocialItem(nft.getString("owner_address"),nft.getString("name"), nft.getString("owner"), nft.getString("img_url"));
                         //Toast.makeText(getApplicationContext(), nft.getString("name"), Toast.LENGTH_SHORT).show();
                         socialItems.add(item);
                         socialAdapter.notifyDataSetChanged();
@@ -67,6 +67,7 @@ public class SocialActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SocialActivity.this, ProfileActivity.class);
+                intent.putExtra("address", Account.address);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }

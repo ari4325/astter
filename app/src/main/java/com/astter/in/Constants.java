@@ -8,15 +8,15 @@ public class Constants {
         return base + "/nfts";
     }
 
-    public static String createUser(){
-        return base + "/set";
+    public static String createUser(String address, String username, String img){
+        return base + "/set?address="+address+"&username="+username+"&img="+img;
     }
 
     public static String getUser(String account_address){
         return base + "/get?address="+account_address;
     }
 
-    public static String startFollowing(String username){
-        return base + "/follow?following="+username+"&follower="+Account.username;
+    public static String startFollowing(String follower_id){
+        return base + "/follow?user_id="+Account.user_id+"&follower_id="+follower_id;
     }
 }

@@ -38,18 +38,21 @@ public class SetUsernameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Account.setContext(getApplicationContext());
-                Account.createUser(username.getText().toString(), address, "");
 
                 try{
                     //DatabaseHandler.getInstance(getApplicationContext()).createUser(Account.username, Account.address);
 
-                    StringRequest request = new StringRequest(Request.Method.POST, Constants.createUser(), new Response.Listener<String>() {
+                    StringRequest request = new StringRequest(Request.Method.POST, Constants.createUser(address, username.getText().toString(), ""), new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
                             try {
                                 JSONObject responseObject = new JSONObject(response);
+                                JSONObject userObject = responseObject.getJSONObject("user");
+
+                                Account.createUser(userObject.getString("username"), userObject.getString("address"), userObject.getString("img"), userObject.getString("_id"));
+
                                 Toast.makeText(getApplicationContext(), responseObject.getString("response"), Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(SetUsernameActivity.this, ProfileActivity.class));
+                                startActivity(new Intent(SetUsernameActivity.this, SocialActivity.class));
                                 overridePendingTransition(0, 0);
                                 finish();
                             } catch (JSONException e) {
